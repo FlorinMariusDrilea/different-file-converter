@@ -1,0 +1,58 @@
+/* Import TailwindCSS */
+@import "tailwindcss";
+
+/* Define custom color variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #3b82f6; /* Tailwind's blue-500 for primary color */
+  --secondary: #4b5563; /* Tailwind's gray-600 for secondary color */
+}
+
+/* Apply theme-specific variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-body: 'Arial', Helvetica, sans-serif; /* Custom font family */
+}
+
+/* Dark mode media query */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #2563eb; /* Tailwind's blue-600 for primary color in dark mode */
+    --secondary: #d1d5db; /* Tailwind's gray-300 for secondary color in dark mode */
+  }
+}
+
+/* Global body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+/* Additional Tailwind base styles if needed */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+  }
+
+  p {
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
